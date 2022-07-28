@@ -3,12 +3,10 @@ var bottonAccionar= document.querySelector("#adicionar-paciente");
 bottonAccionar.addEventListener("click", function(event)  //Esta es una funcion Anónima//
 {
     event.preventDefault();
-    var form= document.querySelector("#from-adicionar");
+    let form= document.querySelector("#from-adicionar");
    
-    var nombre= form.nombre.value;
-    var peso= form.peso.value;
-    var altura= form.altura.value;
-    var gordura= form.gordura.value;
+    //Variable para capturar datos del objeto paciente.
+    var datosPaciente= capturarDatosPaciente(form);
 
     let tabla= document.querySelector("#tabla-pacientes"); //Se accesa al objeto tabla de la parte HTML//
  
@@ -20,12 +18,13 @@ bottonAccionar.addEventListener("click", function(event)  //Esta es una funcion 
     let gorduraTd= document.createElement('td');
     let imcTd= document.createElement('td');
 
-    //en esta seccion se le asigna el valor que tienen las entradas//
-    nombreTd.textContent= nombre;
-    alturaTd.textContent= altura;
-    pesoTd.textContent= peso;
-    gorduraTd.textContent= gordura;
-    imcTd.textContent= calcularIMC(peso, altura);
+    //en esta seccion se le asigna el valor que tienen las entradas
+    //por medio del textContent
+    nombreTd.textContent= datosPaciente.nombre;
+    alturaTd.textContent= datosPaciente.altura;
+    pesoTd.textContent= datosPaciente.peso;
+    gorduraTd.textContent= datosPaciente.gordura;
+    imcTd.textContent= datosPaciente.imc;
 
     //En esta seccion se crean los espacion de html con los valores, heredo valores//
     pacienteTr.appendChild(nombreTd);
@@ -35,6 +34,22 @@ bottonAccionar.addEventListener("click", function(event)  //Esta es una funcion 
     pacienteTr.appendChild(imcTd);
 
     tabla.appendChild(pacienteTr);
-    console.log(pacienteTr);
 
 });
+
+function capturarDatosPaciente(form)
+//Se uso la funcion para poder accedes a los datos
+//desde la funcion anonima de arriba.
+{
+    var odatosPaciente= {
+
+        //Capturar los datos del formulario por medio del value
+        nombre: form.nombre.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calcularIMC(form.peso.value,form.altura.value)
+    }
+
+    return odatosPaciente;
+}
