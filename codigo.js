@@ -12,17 +12,17 @@ for(var i=0; i<Pacientes.length; i++)
     var gordura= ogordura.textContent;
     var oimc= Paciente.querySelector(".info-imc");
     
-    var pesoValido=true;
-    var alturaValida= true;
+    var pesoValido= validarPeso(peso);
+    var alturaValida= validarAltura(altura);
 
-    if(peso<0 || peso> 300)
+    if(!pesoValido)
     {
         opeso.textContent="El peso esta mal"; //Se manda al contenido del objeto, la frese entre comillas//
         oimc.textContent="error";
         pesoValido=false;
         Paciente.classList.add("paciente-incorrecto");
     }
-    if(altura<0 || altura>3)
+    if(!alturaValida)
     {
         oaltura.textContent="La altura esta mal";
         oimc.textContent="error";
@@ -42,4 +42,24 @@ function calcularIMC(peso, altura)
     imc= (peso/(altura*altura));
 
     return imc.toFixed(2);
+}
+
+function validarPeso (peso)
+{
+    if(peso >= 0 && peso < 1000)
+    {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function validarAltura (altura)
+{
+    if(altura >= 0 && altura < 3.00)
+    {
+        return true;       
+    }else{
+        return false;
+    }
 }
