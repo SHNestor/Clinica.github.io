@@ -17,6 +17,9 @@
 		<main>
 			<section class="container">
 				<h2>Mis pacientes</h2>
+				<label for="filtrar-tabla"></label>
+				<input type="text" name="filtro"
+				id="filtrar-tabla" placeholder="Digite el nombre del paciente">
 				<table>
 					<thead>
 						<tr>
@@ -30,7 +33,7 @@
 					<tbody id="tabla-pacientes">
 						<tr class="paciente">
 							<td class="info-nombre">Pablo</td>
-							<td class="info-peso">4000</td>
+							<td class="info-peso">40</td>
 							<td class="info-altura">1</td>
 							<td class="info-gordura">10</td>
 							<td class="info-imc">0</td>
@@ -46,8 +49,8 @@
 
 						<tr class="paciente" >
 							<td class="info-nombre">Erica</td>
-							<td class="info-peso">4000</td>
-							<td class="info-altura">5</td>
+							<td class="info-peso">40</td>
+							<td class="info-altura">1.6</td>
 							<td class="info-gordura">14</td>
 							<td class="info-imc">0</td>
 						</tr>
@@ -55,13 +58,13 @@
 						<tr class="paciente">
 							<td class="info-nombre">Diego</td>
 							<td class="info-peso">85</td>
-							<td class="info-altura">6</td>
+							<td class="info-altura">1.7</td>
 							<td class="info-gordura">24</td>
 							<td class="info-imc">0</td>
 						</tr>
 						<tr class="paciente" >
 							<td class="info-nombre">Tatiana</td>
-							<td class="info-peso">8000</td>
+							<td class="info-peso">50</td>
 							<td class="info-altura">1.55</td>
 							<td class="info-gordura">19</td>
 							<td class="info-imc">0</td>
@@ -97,5 +100,6 @@
 		<script src="form.js"></script>
         <script src="codigo.js"></script>
 		<script src="Eliminar.js"></script>
+		<script src="filtrar.js"></script>
     </body>
 </html>
