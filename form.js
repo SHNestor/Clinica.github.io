@@ -7,7 +7,6 @@ bottonAccionar.addEventListener("click", function(event)  //Esta es una funcion 
     var form= document.querySelector("#from-adicionar");   
     //Variable para capturar datos del objeto paciente.
     var datosPaciente= capturarDatosPaciente(form);
-    let datosTr= contruirTr(datosPaciente);
 
     let errores= validarPaciente(datosPaciente);
 
@@ -15,14 +14,18 @@ bottonAccionar.addEventListener("click", function(event)  //Esta es una funcion 
         exibirMansajesErrores(errores);
         return;
     }
-    //Validar
-    let tabla= document.querySelector("#tabla-pacientes"); //Se accesa al objeto tabla de la parte HTML//
-    tabla.appendChild(datosTr);
+    adicionarPaicenteEnLaTabla(datosPaciente);
     form.reset();
     let mensajesErrores = document.querySelector("#mensaje-error");
     mensajesErrores.innerHTML = "";
 
 });
+function adicionarPaicenteEnLaTabla (paciente){
+    let datosTr= contruirTr(paciente);
+    //Validar
+    let tabla= document.querySelector("#tabla-pacientes"); //Se accesa al objeto tabla de la parte HTML//
+    tabla.appendChild(datosTr);
+}
 
 function capturarDatosPaciente(form)
 //Se uso la funcion para poder accedes a los datos
