@@ -147,3 +147,8 @@ button[disabled=disabled], button:disabled {
 .invisible{
 	display: none;
 }
+#linkDatos{
+	width: 250px;
+	height: 35px;
+	margin-bottom: 10px;
+}
