@@ -5,10 +5,12 @@
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	background-color: gainsboro;
+	padding: 20px;
 }
 header
 {
-    background-color: #333;
+    padding: 10px;
+	background-color: #333;
 	height: 3em;
 	color: #FFF;
 	margin-bottom: 1em;
