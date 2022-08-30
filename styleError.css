@@ -1,7 +1,6 @@
 body{
     background-color: black;
     color: white;
-    padding: 10px;
 }
 header{
     padding: 5px;
@@ -11,21 +10,31 @@ h1{
     font-size: 20px;
     left: 100px;
 }
+.contenedor{
+    width: 80%;
+    /*sirve para el maximo de px a ocupar */
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
 main{
-    padding: 2px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    padding: 20px;
+    float: left;
+    /*Nos permite acomodar el contenido total de padding */
+    /*si tenemos 700 + 20 de padding, no se suma */
+    box-sizing: border-box;
 }
-.seccionImagen{
-    margin: 0 100px 0 30px;
+main img{
+    width: 100%;
+    height: auto;
 }
-img{
-    width: 300px;
-}
-.seccionTexto{
-    width: 400px;
+aside{
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+
 }
 h2{
     font-size: 60px;
@@ -42,4 +51,31 @@ button{
     color: black;
     padding: 10px;
     border-color: white;
+}
+footer{
+    color: #eee;
+    clear: both;
+    float: left;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+/*Seccion para alinear y centrar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 800px) {
+    main{
+        width: 100%;
+    }   
+    aside{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .contenedor{
+        width: 100%;
+    }
+    
 }
